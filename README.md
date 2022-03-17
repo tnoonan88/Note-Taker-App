@@ -1,1 +1,3 @@
 # Note-Taker-App
+
+**PLACEHOLDER - USE README GENERATOR**
