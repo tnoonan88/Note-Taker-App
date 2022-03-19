@@ -1,9 +1,9 @@
-const fb = require('express').Router();
+const notes = require('express').Router();
 const { v4: uuidv4 } = require('uuid');
 const { readFromFile, readAndAppend } = require('../helpers/fsUtils.js');
 
 // GET route for retrieving notes
-fb.get('/notes', (req, res) => {
+notes.get('/notes', (req, res) => {
     readFromFile('./db/db.json', 'utf8')
     .then(data => {
         console.log(data);
@@ -12,7 +12,7 @@ fb.get('/notes', (req, res) => {
 );
 
 // POST route for submitting new note
-fb.post('/notes', (req, res) => {
+notes.post('/notes', (req, res) => {
     console.log(req.body);
     const newNote = {
         title: req.body.title,
@@ -23,4 +23,4 @@ fb.post('/notes', (req, res) => {
     res.json(newNote);
 });
 
-module.exports = fb;
+module.exports = notes;
