@@ -14,9 +14,11 @@ app.use('/api', api);
 
 
 // GET route for notes.html
-app.get('/notes', (req, res) =>
+app.get('w/notes', (req, res) =>
 res.sendFile(path.join(__dirname, '/public/notes.html'))
 );
+
+// DELETE function
 
 // GET route for index.html
 app.get('*', (req, res) =>
